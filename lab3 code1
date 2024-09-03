@@ -1,0 +1,41 @@
+SELECT employee_id AS ID, 
+       first_name || '_' || last_name AS Name,
+       (
+         CASE 
+           WHEN TO_CHAR(hire_date, 'DD') = '01' THEN 'First'
+           WHEN TO_CHAR(hire_date, 'DD') = '02' THEN 'Second'
+           WHEN TO_CHAR(hire_date, 'DD') = '03' THEN 'Third'
+           WHEN TO_CHAR(hire_date, 'DD') = '04' THEN 'Fourth'
+           WHEN TO_CHAR(hire_date, 'DD') = '05' THEN 'Fifth'
+           WHEN TO_CHAR(hire_date, 'DD') = '06' THEN 'Sixth'
+           WHEN TO_CHAR(hire_date, 'DD') = '07' THEN 'Seventh'
+           WHEN TO_CHAR(hire_date, 'DD') = '08' THEN 'Eighth'
+           WHEN TO_CHAR(hire_date, 'DD') = '09' THEN 'Ninth'
+           WHEN TO_CHAR(hire_date, 'DD') = '10' THEN 'Tenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '11' THEN 'Eleventh'
+           WHEN TO_CHAR(hire_date, 'DD') = '12' THEN 'Twelfth'
+           WHEN TO_CHAR(hire_date, 'DD') = '13' THEN 'Thirteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '14' THEN 'Fourteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '15' THEN 'Fifteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '16' THEN 'Sixteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '17' THEN 'Seventeenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '18' THEN 'Eighteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '19' THEN 'Nineteenth'
+           WHEN TO_CHAR(hire_date, 'DD') = '20' THEN 'Twentieth'
+           WHEN TO_CHAR(hire_date, 'DD') = '21' THEN 'Twenty-First'
+           WHEN TO_CHAR(hire_date, 'DD') = '22' THEN 'Twenty-Second'
+           WHEN TO_CHAR(hire_date, 'DD') = '23' THEN 'Twenty-Third'
+           WHEN TO_CHAR(hire_date, 'DD') = '24' THEN 'Twenty-Fourth'
+           WHEN TO_CHAR(hire_date, 'DD') = '25' THEN 'Twenty-Fifth'
+           WHEN TO_CHAR(hire_date, 'DD') = '26' THEN 'Twenty-Sixth'
+           WHEN TO_CHAR(hire_date, 'DD') = '27' THEN 'Twenty-Seventh'
+           WHEN TO_CHAR(hire_date, 'DD') = '28' THEN 'Twenty-Eighth'
+           WHEN TO_CHAR(hire_date, 'DD') = '29' THEN 'Twenty-Ninth'
+           WHEN TO_CHAR(hire_date, 'DD') = '30' THEN 'Thirtieth'
+           WHEN TO_CHAR(hire_date, 'DD') = '31' THEN 'Thirty-First'
+         END
+         || ' of ' || TO_CHAR(hire_date, 'Month YYYY HH:MI:SS AM')
+       ) AS Hiredate
+FROM employees
+WHERE hire_date >= TO_DATE('01-MAY-2003', 'DD-MON-YYYY')
+ORDER BY hire_date;
