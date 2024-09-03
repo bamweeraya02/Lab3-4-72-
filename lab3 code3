@@ -1,0 +1,10 @@
+SELECT 
+j.employee_id, 
+     MAX(j.employee_id) AS department_id,
+     COUNT(j.department_id) AS change_job
+    FROM 
+    job_history j
+    GROUP BY 
+     j.employee_id
+    ORDER BY 
+     j.employee_id;
