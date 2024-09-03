@@ -1,0 +1,13 @@
+SELECT last_name, salary,
+  CASE 
+    WHEN TRUNC(salary/2000, 0) = 0 THEN 0.00
+    WHEN TRUNC(salary/2000, 0) = 1 THEN 0.09
+    WHEN TRUNC(salary/2000, 0) = 2 THEN 0.20
+    WHEN TRUNC(salary/2000, 0) = 3 THEN 0.30
+    WHEN TRUNC(salary/2000, 0) = 4 THEN 0.40
+    WHEN TRUNC(salary/2000, 0) = 5 THEN 0.42
+    WHEN TRUNC(salary/2000, 0) = 6 THEN 0.44
+    ELSE 0.45
+  END AS TAX_RATE
+FROM employees
+WHERE department_id = 80;
