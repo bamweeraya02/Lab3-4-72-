@@ -1,0 +1,4 @@
+SELECT * FROM (
+     SELECT ROWNUM AS rank, tm.*
+     FROM TOP_MANAGERS tm
+) WHERE rank <= 3;
